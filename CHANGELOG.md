@@ -1,3 +1,5 @@
 # Changelog
 
-Cairn Code has no public release yet. Release notes will appear here once binaries are published.
+## 0.1.0
+
+- First public binaries: Windows and Linux (x86_64). macOS is not built yet.

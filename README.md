@@ -19,9 +19,11 @@ Cairn Code lives in your terminal and works across multiple LLM providers, readi
 - **Permission system**: configurable auto-approve, ask, and deny rules per tool
 - **Non-interactive mode**: scriptable, pipeline-friendly execution
 
-## Status
+## Get started
 
-Cairn Code is under active development and not yet publicly released. There are no public binaries or install instructions yet. Star or watch this repository for updates.
+Windows and Linux binaries are available on the [Releases](../../releases) page. Download the binary for your platform and run it from a terminal.
+
+macOS is not built yet. Star or watch this repository for updates.
 
 ## Feedback & bug reports
 
