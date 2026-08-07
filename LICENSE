@@ -1,0 +1,96 @@
+Cairn Code
+
+Copyright © euxaristia 2026. All rights reserved.
+
+1. Ownership
+
+   This software, including its source code, documentation, configuration,
+   assets, and any accompanying materials (together, the "Software"), is the
+   property of the copyright holder. It is protected by copyright law and by
+   international treaties. All right, title, and interest in and to the
+   Software, including all intellectual property rights, remain with the
+   copyright holder.
+
+2. No licence granted
+
+   No licence, express or implied, is granted by this file or by the
+   availability of the Software in any location, including a public source
+   repository. Publishing the Software where it can be read does not place it
+   in the public domain, does not make it open source, and does not grant any
+   right beyond those stated in section 3.
+
+3. Permitted use
+
+   You may view the Software, and you may make the copies that your platform
+   or client creates automatically in the ordinary course of viewing it.
+
+   Any other act reserved to the copyright holder requires that holder's prior
+   written permission. Without it you may not:
+
+   a. use the Software, in whole or in part, for any purpose, including
+      personal, internal, educational, evaluative, or commercial purposes;
+
+   b. reproduce, publish, distribute, sublicense, sell, rent, lease, or
+      otherwise transfer the Software or any copy of it;
+
+   c. modify, adapt, translate, or create derivative works based on the
+      Software;
+
+   d. incorporate the Software, or any portion of it, into another work,
+      including a work distributed under an open-source licence;
+
+   e. use the Software, or any portion of it, as training data, or as input to
+      the training, fine-tuning, or evaluation of any machine learning model;
+
+   f. reverse engineer, decompile, or disassemble any compiled form of the
+      Software, except to the extent that this restriction is expressly
+      prohibited by applicable law; or
+
+   g. remove, obscure, or alter any copyright, trademark, or other proprietary
+      notice contained in the Software.
+
+4. Contributions
+
+   A contribution submitted to this project, by any means including a pull
+   request, patch, or issue attachment, is offered to the copyright holder on
+   a non-exclusive, perpetual, irrevocable, worldwide, royalty-free basis, with
+   the right to use, reproduce, modify, distribute, and sublicense it as part
+   of the Software. You represent that you are entitled to grant that, and that
+   your contribution does not infringe the rights of any third party. No
+   contribution creates any ownership interest in the Software.
+
+5. Third-party components
+
+   The Software depends on third-party components that are separately licensed
+   by their respective owners. Nothing in this file alters, restricts, or
+   supersedes the terms of those licences, and nothing in this file asserts
+   ownership over those components. Their terms govern their own use.
+
+6. No warranty
+
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NONINFRINGEMENT.
+
+7. Limitation of liability
+
+   TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL THE
+   COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY,
+   WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF,
+   OR IN CONNECTION WITH THE SOFTWARE OR THE USE OF OR OTHER DEALINGS IN THE
+   SOFTWARE.
+
+   The Software executes commands, edits files, and sends data to third-party
+   services at the direction of a language model. The copyright holder accepts
+   no liability for any action it takes or for any consequence of that action.
+
+8. Reservation
+
+   All rights not expressly granted in this file are reserved. No waiver of any
+   provision is effective unless made in writing by the copyright holder, and
+   no failure to enforce a provision waives it.
+
+9. Enquiries
+
+   Requests for a licence, or any other permission under this file, should be
+   directed to the copyright holder through this repository.
