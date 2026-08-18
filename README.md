@@ -33,6 +33,8 @@ This repository does not host Cairn Code's source. Use [GitHub Issues](../../iss
 
 Proprietary. All rights reserved. See [LICENSE](LICENSE).
 
-This is not open source. Cairn Code's source is not published in this repository. Nothing here grants any right to use, copy, modify, or distribute Cairn Code.
+This is not open source. Cairn Code's source is not published in this repository, and nothing here licenses that source for use, modification, or distribution.
+
+You may download the published release binaries and run them on your own machine. That is written permission to copy those binaries onto your computer and to use them. It does not grant any other right.
 
 © euxaristia 2026. All rights reserved.
