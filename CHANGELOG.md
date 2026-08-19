@@ -2,7 +2,7 @@
 
 ## 0.2.0
 
-- Linux (x86_64) release binary.
+- Windows and Linux (x86_64) release binaries.
 - Performance, stability, and terminal UI improvements.
 
 ## 0.1.0
