@@ -21,7 +21,17 @@ Cairn Code lives in your terminal and works across multiple LLM providers, readi
 
 ## Get started
 
-Windows and Linux binaries are available on the [Releases](../../releases) page. Download the binary for your platform and run it from a terminal.
+### Linux
+
+Install the latest release binary:
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/cairn/cairn/main/install.sh | sh
+```
+
+### Windows
+
+Download `cairn-code-windows-x86_64.exe` from the [Releases](../../releases) page.
 
 macOS is not built yet. Star or watch this repository for updates.
 
