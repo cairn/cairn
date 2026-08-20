@@ -10,21 +10,44 @@ ASSET_NAME="cairn-code-linux-x86_64"
 
 # Validate OS
 OS="$(uname -s)"
-if [ "$OS" != "Linux" ]; then
-    echo "Error: Cairn Code installer currently supports Linux x86_64." >&2
-    if [ "$OS" = "Darwin" ]; then
-        echo "macOS is not built yet. Star or watch https://github.com/${REPO} for updates." >&2
-    fi
-    exit 1
-fi
-
-# Validate architecture
 ARCH="$(uname -m)"
-case "$ARCH" in
-    x86_64|amd64)
+
+case "$OS" in
+    Linux)
+        case "$ARCH" in
+            x86_64|amd64)
+                ASSET_NAME="cairn-code-linux-x86_64"
+                ;;
+            aarch64|arm64)
+                ASSET_NAME="cairn-code-linux-aarch64"
+                ;;
+            *)
+                echo "Error: Unsupported architecture '${ARCH}' on Linux." >&2
+                exit 1
+                ;;
+        esac
+        ;;
+    Darwin)
+        case "$ARCH" in
+            arm64|aarch64)
+                ASSET_NAME="cairn-code-macos-aarch64"
+                ;;
+            x86_64|amd64)
+                ASSET_NAME="cairn-code-macos-x86_64"
+                ;;
+            *)
+                echo "Error: Unsupported architecture '${ARCH}' on macOS." >&2
+                exit 1
+                ;;
+        esac
         ;;
     *)
-        echo "Error: Unsupported architecture '${ARCH}'. Only x86_64 is currently supported." >&2
+        echo "Error: Unsupported operating system '${OS}'." >&2
+        case "$OS" in
+            MINGW*|MSYS*|CYGWIN*)
+                echo "For Windows, download cairn-code-windows-x86_64.exe from https://github.com/${REPO}/releases/latest" >&2
+                ;;
+        esac
         exit 1
         ;;
 esac
@@ -52,7 +75,13 @@ TMP_FILE="$(mktemp "${TMPDIR:-/tmp}/cairn.XXXXXX")"
 trap 'rm -f "$TMP_FILE"' EXIT
 
 echo "Downloading Cairn Code from ${DOWNLOAD_URL}..."
-curl -fsSL "$DOWNLOAD_URL" -o "$TMP_FILE"
+if ! curl -fsSL "$DOWNLOAD_URL" -o "$TMP_FILE"; then
+    echo "Error: Failed to download ${ASSET_NAME} from ${DOWNLOAD_URL}." >&2
+    if [ "$OS" = "Darwin" ]; then
+        echo "macOS release binaries may not be published yet for the latest release." >&2
+    fi
+    exit 1
+fi
 chmod +x "$TMP_FILE"
 
 DEST="${INSTALL_DIR}/${BINARY_NAME}"
