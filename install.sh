@@ -1,7 +1,7 @@
 #!/bin/sh
 set -eu
 
-# Cairn Code Linux installer
+# Cairn Code installer (Linux & macOS)
 # Usage: curl -fsSL https://raw.githubusercontent.com/cairn/cairn/main/install.sh | sh
 
 REPO="cairn/cairn"

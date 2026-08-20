@@ -37,7 +37,13 @@ Or download binaries directly from the [Releases](../../releases) page:
 
 ### Windows
 
-Download `cairn-code-windows-x86_64.exe` from the [Releases](../../releases) page.
+In PowerShell:
+
+```powershell
+irm https://raw.githubusercontent.com/cairn/cairn/main/install.ps1 | iex
+```
+
+Or download `cairn-code-windows-x86_64.exe` directly from the [Releases](../../releases) page.
 
 ## Updating
 
