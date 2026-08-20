@@ -17,11 +17,12 @@ Cairn Code lives in your terminal and works across multiple LLM providers, readi
 - **Terminal UI**: a fast, keyboard-driven interface with provider/model pickers and syntax-highlighted code
 - **Cost tracking**: per-session and per-call token usage
 - **Permission system**: configurable auto-approve, ask, and deny rules per tool
+- **Self-updating**: built-in `cairn update` command to stay on the latest version
 - **Non-interactive mode**: scriptable, pipeline-friendly execution
 
 ## Get started
 
-### Linux
+### macOS & Linux
 
 Install the latest release binary:
 
@@ -29,11 +30,22 @@ Install the latest release binary:
 curl -fsSL https://raw.githubusercontent.com/cairn/cairn/main/install.sh | sh
 ```
 
+Or download binaries directly from the [Releases](../../releases) page:
+- **macOS (Apple Silicon)**: `cairn-code-macos-aarch64`
+- **macOS (Intel)**: `cairn-code-macos-x86_64`
+- **Linux (x86_64)**: `cairn-code-linux-x86_64`
+
 ### Windows
 
 Download `cairn-code-windows-x86_64.exe` from the [Releases](../../releases) page.
 
-macOS is not built yet. Star or watch this repository for updates.
+## Updating
+
+Run the built-in update command:
+
+```sh
+cairn update
+```
 
 ## Feedback & bug reports
 
