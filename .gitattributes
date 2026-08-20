@@ -1,0 +1,4 @@
+# The installers are the only code in this repo; the source lives elsewhere.
+# Keep them out of GitHub's language statistics.
+install.sh linguist-vendored
+install.ps1 linguist-vendored
