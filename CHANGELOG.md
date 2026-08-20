@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.1
+
+- macOS (Apple Silicon & Intel), Linux (x86_64 & ARM64), and Windows (x86_64) release binaries.
+- Self-update support via `cairn update`.
+- Search, installer, and terminal UI improvements.
+
 ## 0.2.0
 
 - Windows and Linux (x86_64) release binaries.
