@@ -6,7 +6,7 @@
 
 A terminal-based coding agent, built by Cairn.
 
-Cairn Code lives in your terminal and works across multiple LLM providers, reading files, writing and editing code, running shell commands, and searching your codebase to carry out a task from a natural-language instruction.
+Cairn Code runs on macOS and Linux. It lives in your terminal and works across multiple LLM providers, reading files, writing and editing code, running shell commands, and searching your codebase to carry out a task from a natural-language instruction.
 
 ## Features
 
@@ -22,8 +22,6 @@ Cairn Code lives in your terminal and works across multiple LLM providers, readi
 
 ## Get started
 
-### macOS & Linux
-
 Install the latest release binary:
 
 ```sh
@@ -34,16 +32,7 @@ Or download binaries directly from the [Releases](../../releases) page:
 - **macOS (Apple Silicon)**: `cairn-code-macos-aarch64`
 - **macOS (Intel)**: `cairn-code-macos-x86_64`
 - **Linux (x86_64)**: `cairn-code-linux-x86_64`
-
-### Windows
-
-In PowerShell:
-
-```powershell
-irm https://raw.githubusercontent.com/cairn/cairn/main/install.ps1 | iex
-```
-
-Or download `cairn-code-windows-x86_64.exe` directly from the [Releases](../../releases) page.
+- **Linux (ARM64)**: `cairn-code-linux-aarch64`
 
 ## Updating
 

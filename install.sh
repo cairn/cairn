@@ -42,12 +42,7 @@ case "$OS" in
         esac
         ;;
     *)
-        echo "Error: Unsupported operating system '${OS}'." >&2
-        case "$OS" in
-            MINGW*|MSYS*|CYGWIN*)
-                echo "For Windows, download cairn-code-windows-x86_64.exe from https://github.com/${REPO}/releases/latest" >&2
-                ;;
-        esac
+        echo "Error: Unsupported operating system '${OS}'. Cairn Code supports macOS and Linux." >&2
         exit 1
         ;;
 esac
