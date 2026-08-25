@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.2.5
+
+- macOS (Apple Silicon & Intel) and Linux (x86_64 & ARM64) release binaries.
+- Editor integration: Cairn speaks the Agent Client Protocol over stdio, so editors and GUI clients can drive it natively. Sessions reopen after a restart or crash, tool approvals and questions appear right in your editor, and concurrent approvals arrive as one prompt.
+- New `/fingerprint` command guesses which lab built a stealth or codenamed model from a short probe battery and shows the evidence behind its verdict; `--raw` prints every probe's reply. It runs in the background so typing stays responsive.
+- Lower idle memory: `/new` and `/clear` release freed memory immediately instead of leaving the process at its peak.
+- Word-wise cursor movement in the composer with Alt/Option+arrow keys.
+- URLs inside code fences are clickable.
+- ChatGPT turns keep their thinking across context compaction and reuse cached prompts more often, so follow-ups come back faster.
+- Pull request descriptions come prefilled with title, summary, and test plan, ready to submit.
+- Credentials are stored only in your system keychain; there is no plaintext fallback file.
+- A stray `.git` folder at the temp directory or filesystem root is ignored instead of confusing repository detection.
+
+Verify downloads against `sha256sum.txt`.
+
+## 0.2.3
+
 ## 0.2.3
 
 - macOS (Apple Silicon & Intel) and Linux (x86_64 & ARM64) release binaries.
