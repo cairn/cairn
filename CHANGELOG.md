@@ -17,8 +17,6 @@ Verify downloads against `sha256sum.txt`.
 
 ## 0.2.3
 
-## 0.2.3
-
 - macOS (Apple Silicon & Intel) and Linux (x86_64 & ARM64) release binaries.
 - The native Windows build is discontinued. Windows is no longer a supported platform and no Windows binary is published.
 - Linux write-jail sandbox built on Landlock, refusing to run rather than running unconfined when the kernel cannot enforce it.
