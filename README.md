@@ -26,9 +26,9 @@ Install the latest release binary:
 
 ```sh
 curl -fsSL https://raw.githubusercontent.com/cairn/cairn/v0.2.5/install.sh | sh
+```
 
 > **Note:** The version tag in the URL above is pinned for security. Update it with each release.
-```
 
 Or download binaries directly from the [Releases](../../releases) page:
 - **macOS (Apple Silicon)**: `cairn-code-macos-aarch64`
