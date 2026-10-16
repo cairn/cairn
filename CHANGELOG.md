@@ -19,7 +19,7 @@ Verify downloads against `sha256sum.txt`.
 
 - macOS (Apple Silicon & Intel) and Linux (x86_64 & ARM64) release binaries.
 - The native Windows build is discontinued. Windows is no longer a supported platform and no Windows binary is published.
-- Linux write-jail sandbox built on Landlock, refusing to run rather than running unconfined when the kernel cannot enforce it.
+- Linux write-jail sandbox built on Landlock (implemented and tested; not yet wired into command execution, so commands are not confined by it yet).
 - Native ChatGPT device-code login via `/auth login chatgpt`.
 - Nous Portal provider (`NOUS_API_KEY`).
 - `/recap` command summarizing the session without touching history.
@@ -29,7 +29,7 @@ Verify downloads against `sha256sum.txt`.
 ## 0.2.2
 
 - macOS (Apple Silicon & Intel), Linux (x86_64 & ARM64), and Windows (x86_64) release binaries.
-- macOS write-jail sandbox built on Seatbelt.
+- macOS write-jail sandbox built on Seatbelt (implemented and tested; not yet wired into command execution, so commands are not confined by it yet).
 - `/limits` command showing provider quota usage.
 - OpenCode Zen free models listed under `/model`.
 - Read-only MCP tools allowed in plan mode.
