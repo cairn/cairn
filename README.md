@@ -25,7 +25,7 @@ Cairn Code runs on macOS and Linux. It lives in your terminal and works across m
 Install the latest release binary:
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/cairn/cairn/v0.2.5/install.sh | sh
+curl -fsSL https://raw.githubusercontent.com/cairn/cairn/v0.3.2/install.sh | sh
 ```
 
 > **Note:** The version tag in the URL above is pinned for security. Update it with each release.
