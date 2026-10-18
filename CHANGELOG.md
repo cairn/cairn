@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.3.2
+
+- macOS (Apple Silicon & Intel) and Linux (x86_64 & ARM64) release binaries.
+- Steering a turn no longer triggers an automatic recap, recaps can be cancelled with Esc like any other generation, and interrupting a turn no longer ends with a recap either.
+- Ctrl+T cycles the thinking level.
+- Images on free models are checked, not assumed: Cairn tests whether a free model actually accepts images when a session starts or the model changes, and remembers the answer. Models that reject images are treated as text-only, and an image already in the history no longer fails every later turn.
+- Tokens-per-minute rate limits are recognised as rate limits instead of being misread as context overflows.
+- Task lists belong to the session: two Cairn instances in the same project no longer share a list or its reminders, a finished list stays retired when a session is reopened, and the task panel announces its retirement instead of vanishing.
+- Background update checks only ever use the official release source.
+- Polish: the prompt history position shows in the composer's top border while browsing, the queued-prompt limit appears as a brief status notice, wrapped list rows hang under their text, ordered list markers of any length render correctly, code boxes without a language label get a clean unbroken top border, and Windows terminals get a background fallback.
+
+Verify downloads against `sha256sum.txt`.
+
 ## 0.3.1
 
 - macOS (Apple Silicon & Intel) and Linux (x86_64 & ARM64) release binaries.
