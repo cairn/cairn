@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.3.1
+
+- macOS (Apple Silicon & Intel) and Linux (x86_64 & ARM64) release binaries.
+- Every turn closes with a `Worked for` line giving its duration, end time, and date, followed by a short recap of what the turn did. Recaps stream in and can be cancelled with Esc like any other generation.
+- Custom providers: add your own OpenAI-compatible or Anthropic-compatible endpoint from `/provider`, with configurable context size and response-token limits, alongside the built-in providers.
+- New settings in `/config`: commit attribution (the bot co-author, the model that wrote the commit, or both), approval mode, default reasoning effort, and mouse capture.
+- Running subagents appear below the composer, above the status bar, instead of scrolling through the transcript.
+- Code blocks in replies are boxed with a copy affordance, so Ctrl+C inside a box copies the raw source exactly as written.
+- Compaction shows as a centred divider naming how many earlier messages were folded away, including compactions that happen while idle.
+- Tool call rows use the full width of the terminal and adapt as it resizes, and pickers size to their contents instead of reserving blank rows.
+- Tool durations round to the nearest second, so quick calls no longer read as 0s.
+- Safer approvals: commands that can execute project code, now including `cargo check` and `cargo clippy` (both run build scripts and procedural macros), ask for approval unless the project is trusted.
+- Repeated reads of an unchanged file are answered from context instead of re-reading the file, saving tokens on long sessions.
+
+Verify downloads against `sha256sum.txt`.
+
 ## 0.2.5
 
 - macOS (Apple Silicon & Intel) and Linux (x86_64 & ARM64) release binaries.
