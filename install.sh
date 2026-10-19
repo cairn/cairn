@@ -62,12 +62,33 @@ esac
 # ones. With no terminal to ask on, refuse and explain.
 CARGO_BIN_DIR="${CARGO_HOME:-${HOME}/.cargo}/bin"
 DEV_BINARIES=""
+DEV_NEWEST_MTIME=0
 for DEV_NAME in cairn cairn-runtime; do
     if [ -x "${CARGO_BIN_DIR}/${DEV_NAME}" ]; then
         DEV_BINARIES="${DEV_BINARIES}  ${CARGO_BIN_DIR}/${DEV_NAME}
 "
+        # stat is not portable: GNU uses -c %Y, BSD and macOS use -f %m.
+        DEV_MTIME="$(stat -c %Y "${CARGO_BIN_DIR}/${DEV_NAME}" 2>/dev/null || stat -f %m "${CARGO_BIN_DIR}/${DEV_NAME}" 2>/dev/null || echo 0)"
+        case "$DEV_MTIME" in
+            ''|*[!0-9]*) DEV_MTIME=0 ;;
+        esac
+        if [ "$DEV_MTIME" -gt "$DEV_NEWEST_MTIME" ]; then
+            DEV_NEWEST_MTIME="$DEV_MTIME"
+        fi
     fi
 done
+# Switching to the development builds is only offered when they are
+# recent (newest installed within the last 30 days). An old development
+# build is exactly the stale-binary trap this guard exists to prevent,
+# so a stale one is never offered as the build to keep.
+DEV_RECENT=0
+DEV_AGE_DAYS=""
+if [ "$DEV_NEWEST_MTIME" -gt 0 ]; then
+    DEV_AGE_DAYS=$(( ($(date +%s) - DEV_NEWEST_MTIME) / 86400 ))
+    if [ "$DEV_AGE_DAYS" -le 30 ]; then
+        DEV_RECENT=1
+    fi
+fi
 if [ -n "$DEV_BINARIES" ]; then
     echo "Warning: you are trying to install a public release version of Cairn when" >&2
     echo "you seem to already have developer access. Development builds are already" >&2
@@ -79,24 +100,34 @@ if [ -n "$DEV_BINARIES" ]; then
     echo "installed, whichever directory comes first in your PATH silently wins and" >&2
     echo "you end up running the other build without knowing it." >&2
     echo "" >&2
+    if [ "$DEV_RECENT" -eq 0 ] && [ -n "$DEV_AGE_DAYS" ]; then
+        echo "The newest development build here was installed ${DEV_AGE_DAYS} days ago," >&2
+        echo "so switching to the development builds is not offered." >&2
+        echo "" >&2
+    fi
     CHOICE=""
     if [ -r /dev/tty ]; then
         echo "What would you like to do?"
         echo "  1) Remove the development builds and install the release build"
-        echo "  2) Remove the release builds and keep the development builds"
-        echo "  3) Cancel and change nothing"
-        printf 'Choose [1/2/3]: '
+        if [ "$DEV_RECENT" -eq 1 ]; then
+            echo "  2) Remove the release builds and keep the development builds"
+            echo "  3) Cancel and change nothing"
+            printf 'Choose [1/2/3]: '
+        else
+            echo "  2) Cancel and change nothing"
+            printf 'Choose [1/2]: '
+        fi
         read -r CHOICE < /dev/tty || CHOICE=""
     fi
-    case "$CHOICE" in
-        1)
+    case "${CHOICE}:${DEV_RECENT}" in
+        1:*)
             for DEV_NAME in cairn cairn-runtime; do
                 rm -f "${CARGO_BIN_DIR}/${DEV_NAME}"
             done
             echo "Removed the development builds from ${CARGO_BIN_DIR}."
             echo "Continuing with the release install."
             ;;
-        2)
+        2:1)
             REMOVED_RELEASE=""
             for RELEASE_BIN in "${HOME}/.local/bin/cairn" "/usr/local/bin/cairn"; do
                 if [ -e "$RELEASE_BIN" ]; then
