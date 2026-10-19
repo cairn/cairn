@@ -47,7 +47,7 @@ case "$OS" in
         ;;
 esac
 
-# Refuse to install over a Cargo development setup.
+# Refuse to silently install over a Cargo development setup.
 #
 # Cairn's development builds are installed with `cargo install --path .`
 # from the cairn-runtime and cairn-code checkouts, which puts `cairn` and
@@ -56,7 +56,10 @@ esac
 # directory comes first in PATH silently wins: a developer who runs this
 # installer ends up testing the release build without knowing it (this
 # has already happened), and the reverse order strands a release user on
-# a development build. Refuse while development builds are present.
+# a development build. So when development builds are present, stop and
+# offer the choice: delete the development builds and install the
+# release build, or delete the release builds and keep the development
+# ones. With no terminal to ask on, refuse and explain.
 CARGO_BIN_DIR="${CARGO_HOME:-${HOME}/.cargo}/bin"
 DEV_BINARIES=""
 for DEV_NAME in cairn cairn-runtime; do
@@ -71,15 +74,59 @@ if [ -n "$DEV_BINARIES" ]; then
     echo "installed in your PATH:" >&2
     printf '%s' "$DEV_BINARIES" >&2
     echo "Please update through git and cargo instead: pull your cairn-runtime and" >&2
-    echo "cairn-code checkouts and rebuild them with \`cargo install --path .\`." >&2
+    echo "cairn-code checkouts and rebuild them with `cargo install --path .`." >&2
     echo "The release and development builds share the cairn name, so with both" >&2
     echo "installed, whichever directory comes first in your PATH silently wins and" >&2
-    echo "you end up running the other build without knowing it. Refusing to install." >&2
+    echo "you end up running the other build without knowing it." >&2
     echo "" >&2
-    echo "To install the release build instead, remove the development binaries first:" >&2
-    echo "  rm \"${CARGO_BIN_DIR}/cairn\" \"${CARGO_BIN_DIR}/cairn-runtime\"" >&2
-    echo "then run this installer again." >&2
-    exit 1
+    CHOICE=""
+    if [ -r /dev/tty ]; then
+        echo "What would you like to do?"
+        echo "  1) Remove the development builds and install the release build"
+        echo "  2) Remove the release builds and keep the development builds"
+        echo "  3) Cancel and change nothing"
+        printf 'Choose [1/2/3]: '
+        read -r CHOICE < /dev/tty || CHOICE=""
+    fi
+    case "$CHOICE" in
+        1)
+            for DEV_NAME in cairn cairn-runtime; do
+                rm -f "${CARGO_BIN_DIR}/${DEV_NAME}"
+            done
+            echo "Removed the development builds from ${CARGO_BIN_DIR}."
+            echo "Continuing with the release install."
+            ;;
+        2)
+            REMOVED_RELEASE=""
+            for RELEASE_BIN in "${HOME}/.local/bin/cairn" "/usr/local/bin/cairn"; do
+                if [ -e "$RELEASE_BIN" ]; then
+                    if rm -f "$RELEASE_BIN" 2>/dev/null; then
+                        REMOVED_RELEASE="${REMOVED_RELEASE}  ${RELEASE_BIN}
+"
+                    else
+                        echo "Could not remove ${RELEASE_BIN}; remove it with:" >&2
+                        echo "  sudo rm \"${RELEASE_BIN}\"" >&2
+                    fi
+                fi
+            done
+            if [ -n "$REMOVED_RELEASE" ]; then
+                echo "Removed the release builds:"
+                printf '%s' "$REMOVED_RELEASE"
+            else
+                echo "No release builds were found in ~/.local/bin or /usr/local/bin."
+            fi
+            echo "Keeping the development builds. Update them through git and cargo."
+            exit 0
+            ;;
+        *)
+            echo "Refusing to install alongside the development builds." >&2
+            echo "" >&2
+            echo "To install the release build instead, remove the development binaries first:" >&2
+            echo "  rm \"${CARGO_BIN_DIR}/cairn\" \"${CARGO_BIN_DIR}/cairn-runtime\"" >&2
+            echo "then run this installer again." >&2
+            exit 1
+            ;;
+    esac
 fi
 
 # Require curl
