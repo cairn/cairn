@@ -47,6 +47,40 @@ case "$OS" in
         ;;
 esac
 
+# Refuse to install over a Cargo development setup.
+#
+# Cairn's development builds are installed with `cargo install --path .`
+# from the cairn-runtime and cairn-code checkouts, which puts `cairn` and
+# `cairn-runtime` in Cargo's bin directory. That directory sits in PATH
+# ahead of the directories this installer writes to, so a release binary
+# installed alongside the development builds would be silently shadowed
+# by them: `cairn` would keep running the development build, and the user
+# would have no sign the release install had not taken effect.
+CARGO_BIN_DIR="${CARGO_HOME:-${HOME}/.cargo}/bin"
+DEV_BINARIES=""
+for DEV_NAME in cairn cairn-runtime; do
+    if [ -x "${CARGO_BIN_DIR}/${DEV_NAME}" ]; then
+        DEV_BINARIES="${DEV_BINARIES}  ${CARGO_BIN_DIR}/${DEV_NAME}
+"
+    fi
+done
+if [ -n "$DEV_BINARIES" ]; then
+    echo "Warning: you are trying to install a public release version of Cairn when" >&2
+    echo "you seem to already have developer access. Development builds are already" >&2
+    echo "installed in your PATH:" >&2
+    printf '%s' "$DEV_BINARIES" >&2
+    echo "Please update through git and cargo instead: pull your cairn-runtime and" >&2
+    echo "cairn-code checkouts and rebuild them with \`cargo install --path .\`." >&2
+    echo "The Cargo bin directory sits in your PATH ahead of the directory this" >&2
+    echo "installer writes to, so a release binary installed alongside the development" >&2
+    echo "builds would be silently shadowed by them. Refusing to install." >&2
+    echo "" >&2
+    echo "To install the release build instead, remove the development binaries first:" >&2
+    echo "  rm \"${CARGO_BIN_DIR}/cairn\" \"${CARGO_BIN_DIR}/cairn-runtime\"" >&2
+    echo "then run this installer again." >&2
+    exit 1
+fi
+
 # Require curl
 if ! command -v curl >/dev/null 2>&1; then
     echo "Error: curl is required to download Cairn Code." >&2
