@@ -30,6 +30,14 @@ curl -fsSL https://raw.githubusercontent.com/cairn/cairn/v0.3.5/install.sh | sh
 
 > **Note:** The version tag in the URL above is pinned for security. Update it with each release.
 
+On Windows, in PowerShell:
+
+```powershell
+irm https://raw.githubusercontent.com/cairn/cairn/v0.3.5/install.ps1 | iex
+```
+
+> **Note:** The version tag in that URL is pinned the same way.
+
 Or download binaries directly from the [Releases](../../releases) page:
 - **macOS (Apple Silicon)**: `cairn-code-macos-aarch64`
 - **macOS (Intel)**: `cairn-code-macos-x86_64`
