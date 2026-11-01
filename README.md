@@ -25,7 +25,7 @@ Cairn Code runs on macOS, Linux, and Windows. It lives in your terminal and work
 Install the latest release binary:
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/cairn/cairn/v0.3.5/install.sh | sh
+curl -fsSL https://raw.githubusercontent.com/cairn/cairn/main/install.sh | sh
 ```
 
 > **Note:** The version tag in the URL above is pinned for security. Update it with each release.
@@ -33,7 +33,7 @@ curl -fsSL https://raw.githubusercontent.com/cairn/cairn/v0.3.5/install.sh | sh
 On Windows, in PowerShell:
 
 ```powershell
-irm https://raw.githubusercontent.com/cairn/cairn/v0.3.5/install.ps1 | iex
+irm https://raw.githubusercontent.com/cairn/cairn/main/install.ps1 | iex
 ```
 
 > **Note:** The version tag in that URL is pinned the same way.
