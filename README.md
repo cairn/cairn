@@ -10,7 +10,7 @@ Cairn Code runs on macOS, Linux, and Windows. It lives in your terminal and work
 
 ## Features
 
-- **Multi-provider LLM support**: Anthropic, OpenAI, OpenRouter, xAI/Grok, and local models via Ollama, switchable per session
+- **Multi-provider LLM support**: Anthropic, OpenAI, OpenRouter, SpaceXSI, and local models via Ollama, switchable per session
 - **Agentic tool loop**: reads files, writes and edits code, runs shell commands, and searches the codebase autonomously until the task is done
 - **Skills + MCP**: on-demand skill packs and Model Context Protocol server support
 - **Real-time streaming**: token-by-token output with live tool activity and thinking display
@@ -25,15 +25,15 @@ Cairn Code runs on macOS, Linux, and Windows. It lives in your terminal and work
 Install the latest release binary:
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/cairn/cairn/main/install.sh | sh
+curl -fsSL https://raw.githubusercontent.com/cairn/cairn/v0.3.5/install.sh | sh
 ```
 
-> **Note:** The version tag in the URL above is pinned for security. Update it with each release.
+> **Note:** The version tag in the URL above is pinned for security.
 
 On Windows, in PowerShell:
 
 ```powershell
-irm https://raw.githubusercontent.com/cairn/cairn/main/install.ps1 | iex
+irm https://raw.githubusercontent.com/cairn/cairn/v0.3.5/install.ps1 | iex
 ```
 
 > **Note:** The version tag in that URL is pinned the same way.
@@ -52,6 +52,10 @@ Run the built-in update command:
 ```sh
 cairn update
 ```
+
+## Documentation
+
+See the [wiki](../../wiki) to get started, and for commands and configuration.
 
 ## Feedback & bug reports
 
