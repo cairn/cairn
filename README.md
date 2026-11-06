@@ -4,6 +4,8 @@
 
 # Cairn Code
 
+> **Official distribution:** Cairn Code is distributed only from this GitHub repository, through the Releases page and the install scripts below. It is not published on npm, Homebrew, the AUR, or any other package manager. Any package using the Cairn name on those services is unofficial, unrelated to this project, and not endorsed by Cairn.
+
 A terminal-based coding agent, built by Cairn.
 
 Cairn Code runs on macOS, Linux, and Windows. It lives in your terminal and works across multiple LLM providers, reading files, writing and editing code, running shell commands, and searching your codebase to carry out a task from a natural-language instruction.
