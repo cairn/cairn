@@ -4,6 +4,10 @@
 
 # Cairn Code
 
+<p align="center">
+  <strong>English</strong> | <a href="README_ZH.md">中文</a>
+</p>
+
 > **Official distribution:** Cairn Code is distributed only from this GitHub repository, through the Releases page and the install scripts below, and through Cairn's official Homebrew tap (`brew tap cairn/tap`, then `brew install cairn`). It is not published on npm, the AUR, or any other package manager. Any package using the Cairn name on those services is unofficial, unrelated to this project, and not endorsed by Cairn.
 
 A terminal-based coding agent, built by Cairn.
