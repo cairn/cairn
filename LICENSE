@@ -24,6 +24,14 @@ Copyright © euxaristia 2026. All rights reserved.
    You may view the Software, and you may make the copies that your platform
    or client creates automatically in the ordinary course of viewing it.
 
+   You may also redistribute the official binary releases of the Software,
+   exactly as published by the copyright holder in the cairn/cairn GitHub
+   repository, including through package managers and package repositories,
+   provided that each copy is complete and unmodified and is accompanied by
+   this licence. This paragraph is written permission for that redistribution
+   under this section, as an exception to section 3(b); it grants no other
+   right.
+
    Any other act reserved to the copyright holder requires that holder's prior
    written permission. Without it you may not:
 
