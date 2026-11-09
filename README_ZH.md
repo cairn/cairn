@@ -10,7 +10,7 @@
 
 > **说明：** 本文档为英文 README 的中文翻译。如两者内容有任何差异，以英文版为准。
 
-> **官方分发渠道：** Cairn Code 仅通过本 GitHub 仓库分发，包括 Releases 页面和下方的安装脚本，以及 Cairn 官方 Homebrew tap（`brew tap cairn/tap`，然后 `brew install cairn`）。它未在 npm、AUR 或任何其他包管理器上发布。在这些服务上使用 Cairn 名称的任何软件包均为非官方产品，与本项目无关，也未得到 Cairn 的认可。
+> **官方分发渠道：** Cairn Code 仅通过本 GitHub 仓库分发，包括 Releases 页面和下方的安装脚本、Cairn 官方 Homebrew tap（`brew tap cairn/tap`，然后 `brew install cairn`），以及官方 AUR 软件包 `cairn-bin`。它未在 npm 或任何其他包管理器上发布。在这些服务上使用 Cairn 名称的任何其他软件包均为非官方产品，与本项目无关，也未得到 Cairn 的认可。
 
 一款基于终端的编程智能体，由 Cairn 打造。
 
