@@ -27,8 +27,7 @@ Copyright © euxaristia 2026. All rights reserved.
    Distribution of the Software is reserved exclusively to the copyright
    holder, and the Software is made available only through the copyright
    holder's official channels: the releases published in the cairn/cairn
-   GitHub repository, the cairn/tap Homebrew tap, and the cairn-bin package
-   in the Arch User Repository. No other person may distribute, publish, or
+   GitHub repository and the cairn/tap Homebrew tap. No other person may distribute, publish, or
    otherwise make the Software available, in whole or in part, through any
    package manager, package repository, mirror, or other channel; this
    paragraph grants no right, and section 3(b) applies to every other person
