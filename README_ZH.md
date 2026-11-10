@@ -33,7 +33,7 @@ Cairn Code 可在 macOS、Linux 和 Windows 上运行。它驻留在你的终端
 安装最新发布版的二进制文件：
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/cairn/cairn/v0.3.5/install.sh | sh
+curl -fsSL https://raw.githubusercontent.com/cairn/cairn/v0.3.6/install.sh | sh
 ```
 
 > **注意：** 上方 URL 中的版本标签出于安全原因被固定。
@@ -41,7 +41,7 @@ curl -fsSL https://raw.githubusercontent.com/cairn/cairn/v0.3.5/install.sh | sh
 在 Windows 上，使用 PowerShell：
 
 ```powershell
-irm https://raw.githubusercontent.com/cairn/cairn/v0.3.5/install.ps1 | iex
+irm https://raw.githubusercontent.com/cairn/cairn/v0.3.6/install.ps1 | iex
 ```
 
 > **注意：** 该 URL 中的版本标签同样被固定。
