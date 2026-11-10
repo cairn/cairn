@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.3.6
+
+- `/teamwork` runs a larger job as a coordinated team effort: you approve a short framing first, answer the whole interview at once in the transcript, and the team works to the brief you agreed.
+- ChatGPT sign-in now completes on Windows, and Cairn trusts the operating system's root certificates alongside its bundled set, so sign-in and provider connections work behind antivirus web shields, local proxies, and workplace networks that re-sign TLS.
+- Hardening: invisible characters are stripped from prompts, approval text, tool text, and anything you paste into the terminal, with a notice whenever something is removed; tools, hooks, and git run with injection-prone environment variables stripped; and the updater verifies a signed release manifest before installing when a release publishes one.
+- `/remote-control` supervises a session from another client, voice dictation runs locally with no audio leaving the device, and `/plugins` and `/agents` browse plugin packages and subagent types.
+- The ChatGPT model picker lists only the current model generation and new sessions default to the newest Luna model; `/status` opens as a picker, background shells get a status chip and their own picker, and a `/diff` panel sits beside the transcript.
+- This release is unsigned, as the signing key is not yet in place: downloads are checked against the published checksums exactly as in previous releases.
+
+Verify downloads against `sha256sum.txt`.
+
 ## 0.3.5
 
 - Fixed the installer: a warning message in `install.sh` used backticks inside a double-quoted string, so the shell ran the quoted command (`cargo install --path .` in the caller's current folder) while printing the warning, before any prompt. Anyone with a `cairn` or `cairn-runtime` binary already in `~/.cargo/bin` hit it, including people with the unrelated crates.io `cairn` crate. The message now prints literally. Update by re-running the install one-liner.
