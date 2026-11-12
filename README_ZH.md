@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="banner.png" alt="Cairn Code" width="560">
+  <img src="banner.png" alt="Cairn" width="560">
 </p>
 
-# Cairn Code
+# Cairn
 
 <p align="center">
   <a href="README.md">English</a> | <strong>中文</strong>
@@ -10,11 +10,11 @@
 
 > **说明：** 本文档为英文 README 的中文翻译。如两者内容有任何差异，以英文版为准。
 
-> **官方分发渠道：** Cairn Code 仅通过本 GitHub 仓库分发，包括 Releases 页面和下方的安装脚本，以及 Cairn 官方 Homebrew tap（`brew tap cairn/tap`，然后 `brew install cairn`）。它未在 npm 或任何其他包管理器上发布。在这些服务上使用 Cairn 名称的任何其他软件包均为非官方产品，与本项目无关，也未得到 Cairn 的认可。
+> **官方分发渠道：** Cairn 仅通过本 GitHub 仓库分发，包括 Releases 页面和下方的安装脚本，以及 Cairn 官方 Homebrew tap（`brew tap cairn/tap`，然后 `brew install cairn`）。它未在 npm 或任何其他包管理器上发布。在这些服务上使用 Cairn 名称的任何其他软件包均为非官方产品，与本项目无关，也未得到 Cairn 的认可。
 
 一款基于终端的编程智能体，由 Cairn 打造。
 
-Cairn Code 可在 macOS、Linux 和 Windows 上运行。它驻留在你的终端中，可跨多个 LLM 提供商工作，读取文件、编写和编辑代码、运行 shell 命令并搜索你的代码库，根据自然语言指令完成任务。
+Cairn 可在 macOS、Linux 和 Windows 上运行。它驻留在你的终端中，可跨多个 LLM 提供商工作，读取文件、编写和编辑代码、运行 shell 命令并搜索你的代码库，根据自然语言指令完成任务。
 
 ## 功能
 
@@ -67,13 +67,13 @@ cairn update
 
 ## 反馈与错误报告
 
-本仓库不托管 Cairn Code 的源代码。使用 [GitHub Issues](../../issues) 报告错误、提出功能请求或分享反馈。
+本仓库不托管 Cairn 的源代码。使用 [GitHub Issues](../../issues) 报告错误、提出功能请求或分享反馈。
 
 ## 许可证
 
 专有软件。保留所有权利。见 [LICENSE](LICENSE)。
 
-本项目不是开源软件。Cairn Code 的源代码未在本仓库中发布，本仓库中的任何内容都不授予对该源代码的使用、修改或分发许可。
+本项目不是开源软件。Cairn 的源代码未在本仓库中发布，本仓库中的任何内容都不授予对该源代码的使用、修改或分发许可。
 
 你可以下载已发布的二进制文件并在自己的机器上运行。这构成了将这些二进制文件复制到你的计算机上并使用它们的书面许可。除此之外，不授予任何其他权利。
 

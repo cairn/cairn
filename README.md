@@ -1,18 +1,18 @@
 <p align="center">
-  <img src="banner.png" alt="Cairn Code" width="560">
+  <img src="banner.png" alt="Cairn" width="560">
 </p>
 
-# Cairn Code
+# Cairn
 
 <p align="center">
   <strong>English</strong> | <a href="README_ZH.md">中文</a>
 </p>
 
-> **Official distribution:** Cairn Code is distributed only from this GitHub repository, through the Releases page and the install scripts below, and through Cairn's official Homebrew tap (`brew tap cairn/tap`, then `brew install cairn`). It is not published on npm or any other package manager. Any other package using the Cairn name on those services is unofficial, unrelated to this project, and not endorsed by Cairn.
+> **Official distribution:** Cairn is distributed only from this GitHub repository, through the Releases page and the install scripts below, and through Cairn's official Homebrew tap (`brew tap cairn/tap`, then `brew install cairn`). It is not published on npm or any other package manager. Any other package using the Cairn name on those services is unofficial, unrelated to this project, and not endorsed by Cairn.
 
 A terminal-based coding agent, built by Cairn.
 
-Cairn Code runs on macOS, Linux, and Windows. It lives in your terminal and works across multiple LLM providers, reading files, writing and editing code, running shell commands, and searching your codebase to carry out a task from a natural-language instruction.
+Cairn runs on macOS, Linux, and Windows. It lives in your terminal and works across multiple LLM providers, reading files, writing and editing code, running shell commands, and searching your codebase to carry out a task from a natural-language instruction.
 
 ## Features
 
@@ -65,13 +65,13 @@ See the [wiki](../../wiki) to get started, and for commands and configuration.
 
 ## Feedback & bug reports
 
-This repository does not host Cairn Code's source. Use [GitHub Issues](../../issues) to report a bug, request a feature, or share feedback.
+This repository does not host Cairn's source. Use [GitHub Issues](../../issues) to report a bug, request a feature, or share feedback.
 
 ## License
 
 Proprietary. All rights reserved. See [LICENSE](LICENSE).
 
-This is not open source. Cairn Code's source is not published in this repository, and nothing here licenses that source for use, modification, or distribution.
+This is not open source. Cairn's source is not published in this repository, and nothing here licenses that source for use, modification, or distribution.
 
 You may download the published release binaries and run them on your own machine. That is written permission to copy those binaries onto your computer and to use them. It does not grant any other right.
 
