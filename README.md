@@ -51,6 +51,8 @@ Or download binaries directly from the [Releases](../../releases) page:
 - **Linux (ARM64)**: `cairn-code-linux-aarch64`
 - **Windows (x86_64)**: `cairn-code-windows-x86_64.exe`
 
+The install script and the Homebrew formula also link the binary as `agent`, so `agent` runs Cairn too. The link is only made when that name is free in the install directory; an existing `agent` belonging to another tool is left untouched.
+
 ## Updating
 
 Run the built-in update command:

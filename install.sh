@@ -130,6 +130,16 @@ if [ -n "$DEV_BINARIES" ]; then
         2:1)
             REMOVED_RELEASE=""
             for RELEASE_BIN in "${HOME}/.local/bin/cairn" "/usr/local/bin/cairn"; do
+                # The release install also claims an `agent` alias next to
+                # the binary; an alias pointing at this build goes with it.
+                RELEASE_DIR="$(dirname "$RELEASE_BIN")"
+                if [ -L "${RELEASE_DIR}/agent" ]; then
+                    case "$(readlink "${RELEASE_DIR}/agent")" in
+                        cairn|"${RELEASE_BIN}")
+                            rm -f "${RELEASE_DIR}/agent" 2>/dev/null || true
+                            ;;
+                    esac
+                fi
                 if [ -e "$RELEASE_BIN" ]; then
                     if rm -f "$RELEASE_BIN" 2>/dev/null; then
                         REMOVED_RELEASE="${REMOVED_RELEASE}  ${RELEASE_BIN}
@@ -263,6 +273,30 @@ trap - EXIT
 rm -f "$TMP_SUMS"
 
 echo "Installed Cairn Code to ${DEST}"
+
+# Claim the generic `agent` name in this directory too, the way the other
+# terminal agents do: an `agent` symlink to the binary just installed, so
+# the alias tracks `cairn update` instead of going stale the way a copy
+# would. Only when the name is free or already ours: an `agent` that
+# belongs to another tool, or anything else already there, is left
+# exactly as found.
+AGENT_LINK="${INSTALL_DIR}/agent"
+if [ -L "$AGENT_LINK" ]; then
+    case "$(readlink "$AGENT_LINK")" in
+        "${BINARY_NAME}"|"${DEST}")
+            ln -sf "$BINARY_NAME" "$AGENT_LINK"
+            echo "Refreshed the agent alias: ${AGENT_LINK} -> ${BINARY_NAME}"
+            ;;
+        *)
+            echo "Note: ${AGENT_LINK} already exists and is not Cairn's; leaving it as is."
+            ;;
+    esac
+elif [ -e "$AGENT_LINK" ]; then
+    echo "Note: ${AGENT_LINK} already exists and is not Cairn's; leaving it as is."
+else
+    ln -s "$BINARY_NAME" "$AGENT_LINK"
+    echo "Also installed as ${AGENT_LINK} (alias for ${BINARY_NAME})"
+fi
 
 # Verify installation
 if "$DEST" --version >/dev/null 2>&1; then

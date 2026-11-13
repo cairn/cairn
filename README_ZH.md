@@ -53,6 +53,8 @@ irm https://raw.githubusercontent.com/cairn/cairn/v0.3.6/install.ps1 | iex
 - **Linux (ARM64)**：`cairn-code-linux-aarch64`
 - **Windows (x86_64)**：`cairn-code-windows-x86_64.exe`
 
+安装脚本和 Homebrew 公式还会将该二进制文件链接为 `agent`，因此运行 `agent` 同样可以启动 Cairn。该链接仅在安装目录中该名称未被占用时创建；已属于其他工具的 `agent` 不会被改动。
+
 ## 更新
 
 运行内置的更新命令：
