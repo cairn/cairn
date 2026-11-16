@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.3.7
+
+- Cairn Code is now just Cairn: the banner, the system prompt, and the docs carry the new name. Technical identifiers and the `cairn-code-*` release asset names are unchanged.
+- Sign in to OpenRouter in the browser from `/auth login`, with no API key to paste.
+- The OpenGateway and Nous Portal providers are removed; eleven built-in providers remain, plus custom providers.
+- Custom providers gain per-model overrides, discover their model lists live with a fallback when discovery fails, and require https for remote base URLs.
+- `/teamwork` is renamed `/team` and `/swarm` is renamed `/parallel`.
+- `ask_user` questions render in the transcript with their recommended answers, alongside the live picker.
+- The transcript folds runs of shell commands in the default view and brackets each tool call to its output in the verbose view; Ctrl+F searches the transcript, and mermaid flowcharts are drawn as text diagrams.
+- `/status` and the F12 debugger show a session provenance ledger, and resuming a session adopts the provider and model recorded with it.
+- Subagent nesting depth is configurable, subagents have a default model setting, and Cairn reads `~/.cairn/AGENTS.md` as a global rules file.
+- Cairn's own git calls skip repository hooks by default; hooks are opt-in.
+- The memory inspector reads Claude Code's memory store, compaction folds history before the image budget shrinks images, DeepSeek's off-peak rates show in cost figures, the composer completes file paths, worktrees carry uncommitted changes, and MCP server credentials are redacted when a server is read back.
+- This release is unsigned, as the signing key is not yet in place: downloads are checked against the published checksums exactly as in previous releases.
+
+Verify downloads against `sha256sum.txt`.
+
 ## 0.3.6
 
 - `/teamwork` runs a larger job as a coordinated team effort: you approve a short framing first, answer the whole interview at once in the transcript, and the team works to the brief you agreed.
