@@ -1,16 +1,16 @@
 <p align="center">
-  <img src="banner.png" alt="Cairn" width="560">
+  <img src="https://raw.githubusercontent.com/cairn/cairn/main/banner.png" alt="Cairn" width="560">
 </p>
 
 # Cairn
 
 <p align="center">
-  <a href="README.md">English</a> | <strong>中文</strong>
+  <a href="https://github.com/cairn/cairn/blob/main/README.md">English</a> | <strong>中文</strong>
 </p>
 
 > **说明：** 本文档为英文 README 的中文翻译。如两者内容有任何差异，以英文版为准。
 
-> **官方分发渠道：** Cairn 仅通过本 GitHub 仓库分发，包括 Releases 页面和下方的安装脚本，以及 Cairn 官方 Homebrew tap（`brew tap cairn/tap`，然后 `brew install cairn`）。它未在 npm 或任何其他包管理器上发布。在这些服务上使用 Cairn 名称的任何其他软件包均为非官方产品，与本项目无关，也未得到 Cairn 的认可。
+> **官方分发渠道：** Cairn 仅通过本 GitHub 仓库分发，包括 Releases 页面和下方的安装脚本，Cairn 官方 Homebrew tap（`brew tap cairn/tap`，然后 `brew install cairn`），以及 npm 上的 [`cairn-code`](https://www.npmjs.com/package/cairn-code)（0.3.6 及以后版本）。它未在任何其他包管理器上发布。使用 Cairn 名称的任何其他软件包均为非官方产品，与本项目无关，也未得到 Cairn 的认可。
 
 一款基于终端的编程智能体，由 Cairn 打造。
 
@@ -46,7 +46,13 @@ irm https://raw.githubusercontent.com/cairn/cairn/v0.3.6/install.ps1 | iex
 
 > **注意：** 该 URL 中的版本标签同样被固定。
 
-也可以直接从 [Releases](../../releases) 页面下载二进制文件：
+使用 Bun 或 npm：
+
+```sh
+bun add -g cairn-code   # 或：npm install -g cairn-code
+```
+
+也可以直接从 [Releases](https://github.com/cairn/cairn/releases) 页面下载二进制文件：
 - **macOS (Apple Silicon)**：`cairn-code-macos-aarch64`
 - **macOS (Intel)**：`cairn-code-macos-x86_64`
 - **Linux (x86_64)**：`cairn-code-linux-x86_64`
@@ -63,20 +69,22 @@ irm https://raw.githubusercontent.com/cairn/cairn/v0.3.6/install.ps1 | iex
 cairn update
 ```
 
+如果通过 Bun 或 npm 安装，请改用包管理器更新（`bun update -g cairn-code`）。
+
 ## 文档
 
-请参阅 [wiki](../../wiki) 快速上手，并了解命令与配置。
+请参阅 [wiki](https://github.com/cairn/cairn/wiki) 快速上手，并了解命令与配置。
 
 ## 反馈与错误报告
 
-本仓库不托管 Cairn 的源代码。使用 [GitHub Issues](../../issues) 报告错误、提出功能请求或分享反馈。
+本仓库不托管 Cairn 的源代码。使用 [GitHub Issues](https://github.com/cairn/cairn/issues) 报告错误、提出功能请求或分享反馈。
 
 ## 许可证
 
-专有软件。保留所有权利。见 [LICENSE](LICENSE)。
+专有软件。保留所有权利。见 [LICENSE](https://github.com/cairn/cairn/blob/main/LICENSE)。
 
 本项目不是开源软件。Cairn 的源代码未在本仓库中发布，本仓库中的任何内容都不授予对该源代码的使用、修改或分发许可。
 
 你可以下载已发布的二进制文件并在自己的机器上运行。这构成了将这些二进制文件复制到你的计算机上并使用它们的书面许可。除此之外，不授予任何其他权利。
 
-© euxaristia 2026。保留所有权利。
+© euxarist 2026。保留所有权利。

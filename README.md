@@ -1,14 +1,14 @@
 <p align="center">
-  <img src="banner.png" alt="Cairn" width="560">
+  <img src="https://raw.githubusercontent.com/cairn/cairn/main/banner.png" alt="Cairn" width="560">
 </p>
 
 # Cairn
 
 <p align="center">
-  <strong>English</strong> | <a href="README_ZH.md">中文</a>
+  <strong>English</strong> | <a href="https://github.com/cairn/cairn/blob/main/README_ZH.md">中文</a>
 </p>
 
-> **Official distribution:** Cairn is distributed only from this GitHub repository, through the Releases page and the install scripts below, and through Cairn's official Homebrew tap (`brew tap cairn/tap`, then `brew install cairn`). It is not published on npm or any other package manager. Any other package using the Cairn name on those services is unofficial, unrelated to this project, and not endorsed by Cairn.
+> **Official distribution:** Cairn is distributed only from this GitHub repository, through the Releases page and the install scripts below, through Cairn's official Homebrew tap (`brew tap cairn/tap`, then `brew install cairn`), and on npm as [`cairn-code`](https://www.npmjs.com/package/cairn-code) (0.3.6 and later). It is not published on any other package manager. Any other package using the Cairn name is unofficial, unrelated to this project, and not endorsed by Cairn.
 
 A terminal-based coding agent, built by Cairn.
 
@@ -44,7 +44,13 @@ irm https://raw.githubusercontent.com/cairn/cairn/v0.3.6/install.ps1 | iex
 
 > **Note:** The version tag in that URL is pinned the same way.
 
-Or download binaries directly from the [Releases](../../releases) page:
+With Bun or npm:
+
+```sh
+bun add -g cairn-code   # or: npm install -g cairn-code
+```
+
+Or download binaries directly from the [Releases](https://github.com/cairn/cairn/releases) page:
 - **macOS (Apple Silicon)**: `cairn-code-macos-aarch64`
 - **macOS (Intel)**: `cairn-code-macos-x86_64`
 - **Linux (x86_64)**: `cairn-code-linux-x86_64`
@@ -61,20 +67,22 @@ Run the built-in update command:
 cairn update
 ```
 
+If you installed with Bun or npm, update through the package manager instead (`bun update -g cairn-code`).
+
 ## Documentation
 
-See the [wiki](../../wiki) to get started, and for commands and configuration.
+See the [wiki](https://github.com/cairn/cairn/wiki) to get started, and for commands and configuration.
 
 ## Feedback & bug reports
 
-This repository does not host Cairn's source. Use [GitHub Issues](../../issues) to report a bug, request a feature, or share feedback.
+This repository does not host Cairn's source. Use [GitHub Issues](https://github.com/cairn/cairn/issues) to report a bug, request a feature, or share feedback.
 
 ## License
 
-Proprietary. All rights reserved. See [LICENSE](LICENSE).
+Proprietary. All rights reserved. See [LICENSE](https://github.com/cairn/cairn/blob/main/LICENSE).
 
 This is not open source. Cairn's source is not published in this repository, and nothing here licenses that source for use, modification, or distribution.
 
 You may download the published release binaries and run them on your own machine. That is written permission to copy those binaries onto your computer and to use them. It does not grant any other right.
 
-© euxaristia 2026. All rights reserved.
+© euxarist 2026. All rights reserved.
