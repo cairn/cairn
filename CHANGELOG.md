@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.3.8
+
+- Cairn now sends one anonymous usage count a day (version, operating system, and architecture only, with no identifiers), so real users can be told apart from download noise. Opt out any time in settings.
+- The session tab bar is always on, keeping open sessions visible and one keystroke away.
+- The transcript takes the Claude Code shape by default; the verbose view gives each tool call its own emoji row, blinking while the tool runs and steady once it finishes.
+- Terminal input handles the kitty keyboard protocol and pasted images properly.
+- The cursor is restored when Cairn exits instead of staying hidden.
+- This release is unsigned, as the signing key is not yet in place: downloads are checked against the published checksums exactly as in previous releases.
+
+Verify downloads against `sha256sum.txt`.
 ## 0.3.7
 
 - Cairn Code is now just Cairn: the banner, the system prompt, and the docs carry the new name. Technical identifiers and the `cairn-code-*` release asset names are unchanged.
