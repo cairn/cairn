@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.3.9
+
+- A finished turn now closes with Cairn's own mark, a small stacked cairn, and its own stone-work verbs (Stacked, Settled, Balanced, and their kin), replacing the borrowed asterisk and verbs earlier builds used.
+- Standby: Cairn can be asked to wait for a file, a process, or a time; it holds quietly without spending a turn and resumes on its own when the moment comes, and a typed message wakes it at once.
+- The prompt box spans the full width of the terminal, framed by a coloured rule above and below.
+- Long sessions on Claude models keep their thinking intact, and the to-do reminder no longer repeats itself turn after turn.
+- Saved sessions can be listed over the agent protocol, so connected clients such as the desktop app can show and resume earlier conversations.
+- Deleting a pasted image's chip no longer strands the cursor on the composer's top rule; the caret stays on the input row.
+- This release is unsigned, as the signing key is not yet in place: downloads are checked against the published checksums exactly as in previous releases.
+
+Verify downloads against `sha256sum.txt`.
 ## 0.3.8
 
 - Cairn now sends one anonymous usage count a day (version, operating system, and architecture only, with no identifiers), so real users can be told apart from download noise. Opt out any time in settings.
