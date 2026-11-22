@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.3.11
+
+- A full bug review sweep: twenty-five confirmed bugs found and fixed across Cairn and its runtime, including the items below.
+- Tabs no longer share state: recaps, checkpoints, the rewind picker, and composer undo history are kept per tab instead of leaking from one tab into another.
+- Saving an MCP server's configuration no longer deletes custom HTTP headers you added by hand, and `cairn mcp get` masks headers whose names look like secrets. Servers configured from the command line are honoured the same way as servers from the settings file.
+- Sessions follow a moved project reliably: a project whose folder moved is reunited with its sessions by comparing its remotes properly, and project memory keys correctly for projects whose remote is a local path.
+- Provider replies are checked as they stream: a malformed or cut-off stream is rejected instead of corrupting the turn, and unusable pricing figures are refused rather than shown.
+- The session log repairs itself: a half-written final line left by a crash is trimmed on open so later entries survive, and conflicting edits resolve the same way regardless of order.
+- `cairn -C` in exec and ACP modes fails clearly when the directory is missing or unusable, instead of starting in the wrong place.
+- Wide characters no longer stall the typewriter effect, and file edits you undid stay undone after a restart.
+- Usage counting: alongside the daily anonymous launch count, Cairn now sends one further anonymous count, once per machine, the first time a provider works on it (version, operating system, and architecture only, no identifiers). The same opt-outs apply.
+- This release is unsigned, as the signing key is not yet in place: downloads are checked against the published checksums exactly as in previous releases.
+
 ## 0.3.10
 
 - Memory now has a shared scope: a fact saved once follows you across every project, alongside each project's own memory, and project memory follows the project itself, so a moved or second checkout keeps its memories. A save that looks like it contains a secret is refused.
