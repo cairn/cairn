@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.3.10
+
+- Memory now has a shared scope: a fact saved once follows you across every project, alongside each project's own memory, and project memory follows the project itself, so a moved or second checkout keeps its memories. A save that looks like it contains a secret is refused.
+- `cairn mcp add`, `list`, `get`, and `remove` now work in the main `cairn` binary.
+- Tabs: Ctrl+Tab switches and Ctrl+W closes, and the tab bar stays hidden until a second tab is open.
+- The composer has undo and redo.
+- Token counts in thought lines are dimmed.
+- A session woken from standby shows as running again.
+- Cairn can draw charts as text inside the transcript.
+- The built-in OpenAI and DeepSeek providers are removed. OpenAI models remain available through ChatGPT sign-in and OpenRouter, and DeepSeek models through OpenRouter and OpenCode Go.
+- This release is unsigned, as the signing key is not yet in place: downloads are checked against the published checksums exactly as in previous releases.
+
 ## 0.3.9
 
 - A finished turn now closes with Cairn's own mark, a small stacked cairn, and its own stone-work verbs (Stacked, Settled, Balanced, and their kin), replacing the borrowed asterisk and verbs earlier builds used.
