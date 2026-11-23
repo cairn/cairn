@@ -73,6 +73,10 @@ If you installed with Bun or npm, update through the package manager instead (`b
 
 See the [wiki](https://github.com/cairn/cairn/wiki) to get started, and for commands and configuration.
 
+## Community
+
+Join the [Cairn Discord server](https://discord.gg/SXYP54EYC9) for release news, support, and to follow what Cairn is building next.
+
 ## Feedback & bug reports
 
 This repository does not host Cairn's source. Use [GitHub Issues](https://github.com/cairn/cairn/issues) to report a bug, request a feature, or share feedback.
