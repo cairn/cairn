@@ -75,6 +75,10 @@ cairn update
 
 请参阅 [wiki](https://github.com/cairn/cairn/wiki) 快速上手，并了解命令与配置。
 
+## 社区
+
+加入 [Cairn Discord 服务器](https://discord.gg/SXYP54EYC9)，获取发布动态与技术支持，并关注 Cairn 正在打造的新功能。
+
 ## 反馈与错误报告
 
 本仓库不托管 Cairn 的源代码。使用 [GitHub Issues](https://github.com/cairn/cairn/issues) 报告错误、提出功能请求或分享反馈。
